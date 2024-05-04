@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My HTML Page</title>
+
+	<link rel="stylesheet" href="1.css" type="text/css">
+	<link rel="shortcut icon " href="log.webp" type="image/icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  #countdown {
+    display: none;
+  }
+  #byeMessage {
+    display: none;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+		<header>
+			<h1>Welcome to My Website</h1>
+		</header>
+		
+		
+		<section>
+			<fieldset>
+				<Legend style="text-align:left;">Hi<br>Friends</legend>
+				<h2>First</h2>
+				<h3>Do you like it</h3>
+				<button class="button1" id="yesBtn" onclick="startCountdown()">Yes</button>
+				<button class="button2" id="noBtn" onclick="sayBye()">No</button>
+				<div id="countdown"></div>
+				<div id="byeMessage">Ok bye</div>
+			</fieldset>
+		</section>
+	
+	
+	
+	<footer>
+		<div class="foot" style="gap: 25px;">
+	
+			<div class="foot1"><h1 style="font-size:13px; font-weight:weight;">Stay connected</h1>
+			<p style="font-size:10px;">Follow me on my social media account to get even more  content.</p></div>
+			<div class="foot1"><span style="font-size:25px;">👉</span><a  href="https://www.instagram.com/rohtas_saini_9484/"><i class="fa fa-instagram" style="font-size:40px;color:red"></i>
+			</a><span style="font-size:25px;">👈</span></div>
+			
+			<div class="foot1" >	<span Style="font-family:cursive; text-align:right; margin:10px; margin-right:50px;  font-size:25px;">Rohtas</span></div>
+		</div>
+    </footer>
+
+	
+	
+<script>
+function startCountdown() {
+  document.getElementById("noBtn").style.display = "none";
+  document.getElementById("countdown").style.display = "block";
+
+  var countdown = 11;
+  var countdownElement = document.getElementById("countdown");
+  countdownElement.innerText =  "RSGG\n" + "Countdown:" + countdown;
+
+  var countdownInterval = setInterval(function() {
+    countdown--;
+    countdownElement.innerText =  "RSGG\n" + "Countdown:" + countdown;
+    if (countdown <= 0) {
+      clearInterval(countdownInterval);
+      window.location.href = "2.html"; // Replace with the URL of your next page
+    }
+  }, 1000);
+}
+
+function sayBye() {
+  document.getElementById("noBtn").style.display = "none";
+  document.getElementById("byeMessage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
+

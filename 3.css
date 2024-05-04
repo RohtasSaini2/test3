@@ -1,0 +1,44 @@
+		body {
+            font-family: Arial, sans-serif;
+            background-color:#F295BB2 ;
+            margin: 0;
+            padding: 0;
+			background-image: url('ps.JPG') ;
+			background-position: center; 
+			background-repeat: no-repeat;
+			background-size:cover;
+			
+        }
+        header {
+            background-color: #BF1131;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        
+		
+		
+        footer {
+            background-color: #BF1131;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+		
+		button:hover {
+            cursor: pointer;
+        }
+		a{
+			text-decoration:none;
+			
+			
+		}
+		
+		
+		container:hover {
+            cursor: pointer;
+		
+		

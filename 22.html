@@ -1,0 +1,299 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+<title>Button Click</title>
+<script>
+function redirect() {
+window.open("https://www.nextpage.com", "_blank");
+}
+var swapped = false;
+function swapButtons() {
+if(swapped) {
+document.getElementById("yes-button").style.display = "";
+document.getElementById("no-button").style.display = "none";
+} else {
+document.getElementById("yes-button").style.display = "none";
+document.getElementById("no-button").style.display = "";
+}
+swapped = !swapped;
+}
+</script>
+</head>
+<body>
+<button id="yes-button" onclick="setTimeout(function(){document.getElementById('result').innerHTML = 'RSGG';
+setTimeout(redirect, 10000);
+}, 1000)">Yes</button>
+<button id="no-button" onclick="swapButtons()">No</button>
+<div id="result"></div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Yes No Buttons</title>
+<script>
+function startCountdown() {
+  var countdown = 10;
+  document.getElementById('countdownTimer').textContent = countdown;
+  document.getElementById('rsggText').style.display = 'block';
+  
+  var interval = setInterval(function() {
+    countdown--;
+    document.getElementById('countdownTimer').textContent = countdown;
+    if (countdown <= 0) {
+      clearInterval(interval);
+      window.open('nextpage.html', '_blank');
+    }
+  }, 1000);
+}
+
+function swapButtons() {
+  var yesButton = document.getElementById('yesButton');
+  var noButton = document.getElementById('noButton');
+  
+  if (yesButton.style.display === 'none') {
+    yesButton.style.display = 'inline';
+    noButton.style.display = 'none';
+  } else {
+    yesButton.style.display = 'none';
+    noButton.style.display = 'inline';
+  }
+}
+</script>
+</head>
+<body>
+
+<button id="yesButton" onclick="startCountdown()">Yes</button>
+<button id="noButton" onclick="swapButtons()" style="display:none;">No</button>
+
+<div id="rsggText" style="display:none;">
+  <p>RSGG</p>
+  <p id="countdownTimer"></p>
+</div>
+
+</body>
+</html>-->
+
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Interaction</title>
+    <style>
+        #countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="yesButton">Yes</button>
+    <button id="noButton">No</button>
+    <div id="countdown"></div>
+
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const countdownDiv = document.getElementById('countdown');
+
+        let countdownTimer;
+
+        yesButton.addEventListener('click', () => {
+            countdownDiv.textContent = 'RSGG';
+            countdownTimer = setTimeout(() => {
+                window.open('https://www.example.com', '_blank');
+            }, 10000);
+        });
+
+        noButton.addEventListener('click', () => {
+            clearTimeout(countdownTimer);
+            countdownDiv.textContent = '';
+            const temp = yesButton.textContent;
+            yesButton.textContent = noButton.textContent;
+            noButton.textContent = temp;
+        });
+    </script>
+</body>
+</html>-->
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yes or No</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #yes, #no {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<button id="yes">Yes</button>
+<button id="no">No</button>
+
+<script>
+    let yesButton = document.getElementById("yes");
+    let noButton = document.getElementById("no");
+    let timer;
+
+    yesButton.addEventListener("click", function() {
+        countdown();
+    });
+
+    noButton.addEventListener("click", function() {
+        swapButtons();
+    });
+
+    function countdown() {
+        let count = 10;
+        timer = setInterval(function() {
+            document.body.innerHTML = "<h1>Countdown: " + count + "</h1>";
+            count--;
+            if (count < 0) {
+                clearInterval(timer);
+                openNextPage();
+            }
+        }, 1000);
+    }
+
+    function swapButtons() {
+        let temp = yesButton.innerHTML;
+        yesButton.innerHTML = noButton.innerHTML;
+        noButton.innerHTML = temp;
+    }
+
+    function openNextPage() {
+        window.open("next_page.html", "_blank");
+    }
+</script>
+
+</body>
+</html>-->
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yes or No</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    .button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #countdown {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<button id="yes" class="button">Yes</button>
+<button id="no" class="button">No</button>
+<div id="countdown" style="display: none;"></div>
+
+<script>
+    let yesButton = document.getElementById("yes");
+    let noButton = document.getElementById("no");
+    let countdownDiv = document.getElementById("countdown");
+    let timer;
+
+    yesButton.addEventListener("click", function() {
+        countdown();
+    });
+
+    noButton.addEventListener("click", function() {
+        swapButtons();
+    });
+
+    function countdown() {
+        countdownDiv.style.display = "block";
+        yesButton.disabled = true;
+        noButton.disabled = true;
+        countdownDiv.innerHTML = "Countdown: 10";
+        let count = 9;
+        timer = setInterval(function() {
+            countdownDiv.innerHTML = "Countdown: " + count;
+            if (count === 0) {
+                clearInterval(timer);
+                countdownDiv.innerHTML = "RSGG";
+                openNextPage();
+            }
+            count--;
+        }, 1000);
+    }
+
+    function swapButtons() {
+        let temp = yesButton.innerHTML;
+        yesButton.innerHTML = noButton.innerHTML;
+        noButton.innerHTML = temp;
+        yesButton.removeEventListener("click", countdown);
+        yesButton.addEventListener("click", swapButtons);
+    }
+
+    function openNextPage() {
+        setTimeout(function() {
+            window.open("next-page.html", "_blank");
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto Redirect Page</title>
+</head>
+<body>
+
+<p>This is the content of your page.</p>
+
+<!-- Link for auto redirect -->
+<a id="redirectLink" href="next-page.html">Redirecting in 5 seconds...</a>
+
+<script>
+// Set the time in milliseconds before redirect
+var redirectTime = 5000; // 5 seconds
+var redirectLink = document.getElementById("redirectLink");
+
+// Function to redirect the page after a certain time
+function redirect() {
+  setTimeout(function() {
+    window.location.href = redirectLink.href; // Redirect to the link's href attribute
+  }, redirectTime);
+}
+
+// Call the redirect function
+redirect();
+</script>
+
+</body>
+</html>

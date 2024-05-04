@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="3.css" type="text/css">
+	<link rel="shortcut icon " href="log.webp" type="image/icon">
+	
+    <title>My HTML Page</title>
+    
+	
+	
+	
+	
+</head>
+<body>
+    <header>
+        <h1>Welcome to My About</h1>
+    </header>
+    
+	<a id="redirectLink" href="4.html"></a>
+
+
+
+
+	
+	
+	
+	
+	
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+		
+		<div Style="font-family:cursive; text-align:right; margin:10px; margin-right:50px;  font-size:2rem;">Rohtas</div>
+		
+    </footer>
+	
+	<script>
+// Set the time in milliseconds before redirect
+var redirectTime = 5000; // 5 seconds
+var redirectLink = document.getElementById("redirectLink");
+
+// Function to redirect the page after a certain time
+function redirect() {
+  setTimeout(function() {
+    window.location.href = redirectLink.href; // Redirect to the link's href attribute
+  }, redirectTime);
+}
+
+// Call the redirect function
+redirect();
+</script>
+	
+	
+</body>
+</html>
